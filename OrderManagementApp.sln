@@ -3,17 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagementApp.UI", "OrderManagementApp\OrderManagementApp.UI.csproj", "{FDB3EC82-73F8-4FE6-9EEF-87F299B207CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagementApp.UI", "OrderManagementApp\OrderManagementApp.UI.csproj", "{FDB3EC82-73F8-4FE6-9EEF-87F299B207CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagementApp.API", "OrderManagementApp.API\OrderManagementApp.API.csproj", "{73EE8DE0-DABE-43A9-AC64-A6BB8FA59362}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagementApp.API", "OrderManagementApp.API\OrderManagementApp.API.csproj", "{73EE8DE0-DABE-43A9-AC64-A6BB8FA59362}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9701A89F-8D91-4D04-BAFA-CF02C976679A} = {9701A89F-8D91-4D04-BAFA-CF02C976679A}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagementApp.Business", "OrderManagementApp.Business\OrderManagementApp.Business.csproj", "{5D4CAE16-94B0-4DD3-9C4F-DCC1DA8C4BCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagementApp.Business", "OrderManagementApp.Business\OrderManagementApp.Business.csproj", "{5D4CAE16-94B0-4DD3-9C4F-DCC1DA8C4BCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagementApp.Data", "OrderManagementApp.Data\OrderManagementApp.Data.csproj", "{9701A89F-8D91-4D04-BAFA-CF02C976679A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagementApp.Data", "OrderManagementApp.Data\OrderManagementApp.Data.csproj", "{9701A89F-8D91-4D04-BAFA-CF02C976679A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagementApp.Shared", "OrderManagementApp.Shared\OrderManagementApp.Shared.csproj", "{5EEEFAD8-7CFB-4E1E-8D51-8B74EBFF2B8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagementApp.Shared", "OrderManagementApp.Shared\OrderManagementApp.Shared.csproj", "{5EEEFAD8-7CFB-4E1E-8D51-8B74EBFF2B8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagementApp.Models", "OrderManagementApp.Models\OrderManagementApp.Models.csproj", "{BF4F641E-DA1B-4637-AD88-5C6C82824910}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagementApp.Models", "OrderManagementApp.Models\OrderManagementApp.Models.csproj", "{BF4F641E-DA1B-4637-AD88-5C6C82824910}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

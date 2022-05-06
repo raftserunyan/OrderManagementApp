@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OrderManagementApp.Data.Models;
+using OrderManagementApp.Models;
 
 namespace OrderManagementApp.Data
 {
-    internal class OrderManagementAppDbContext : DbContext
+    public class OrderManagementAppDbContext : DbContext
     {
         public OrderManagementAppDbContext(DbContextOptions<OrderManagementAppDbContext> options) : base(options)
         {

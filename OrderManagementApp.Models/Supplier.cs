@@ -11,5 +11,6 @@ namespace OrderManagementApp.Models
         public string City { get; set; }
         public string PostalCode { get; set; }
         public State State { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }

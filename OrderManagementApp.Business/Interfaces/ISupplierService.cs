@@ -8,6 +8,7 @@ namespace OrderManagementApp.Business.Interfaces
     {
         Task<IEnumerable<SupplierModel>> GetAllSuppliersAsync();
         Task<SupplierModel> GetByIdAsync(int id);
+        Task DeleteSupplierAsync(int id);
         Task<SupplierModel> CreateSupplierAsync(SupplierCreationRequest request);
         Task<SupplierModel> UpdateSupplierAsync(SupplierUpdateRequest request);
     }

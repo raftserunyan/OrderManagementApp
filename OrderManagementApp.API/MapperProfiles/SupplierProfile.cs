@@ -10,7 +10,8 @@ namespace OrderManagementApp.API.MapperProfiles
         {
             CreateMap<Supplier, SupplierModel>();
             CreateMap<SupplierCreationRequest, Supplier>();
-            CreateMap<SupplierUpdateRequest, Supplier>();
+            CreateMap<SupplierUpdateRequest, Supplier>()
+                .ForMember(x => x.IsDeleted, opts => opts.Ignore());
         }
     }
 }

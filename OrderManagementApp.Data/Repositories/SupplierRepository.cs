@@ -1,6 +1,6 @@
 ﻿using OrderManagementApp.Data.Interfaces;
-using OrderManagementApp.Data.Models;
 using OrderManagementApp.Data.Repositories.Common;
+using OrderManagementApp.Models;
 
 namespace OrderManagementApp.Data.Repositories
 {

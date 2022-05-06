@@ -9,6 +9,8 @@ using OrderManagementApp.API.Middlewares;
 using OrderManagementApp.Business.Extensions;
 using OrderManagementApp.Data.ServiceExtensions;
 using OrderManagementApp.Data;
+using AutoMapper;
+using OrderManagementApp.API.MapperProfiles;
 
 namespace OrderManagementApp.API
 {
@@ -34,6 +36,8 @@ namespace OrderManagementApp.API
 
             services.AddDbContext<OrderManagementAppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("LocalDbConnectionString")));
+
+            services.AddAutoMapper(typeof(SupplierProfile));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

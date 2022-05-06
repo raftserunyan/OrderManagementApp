@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagementApp.UI", "OrderManagementApp\OrderManagementApp.UI.csproj", "{FDB3EC82-73F8-4FE6-9EEF-87F299B207CC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5EEEFAD8-7CFB-4E1E-8D51-8B74EBFF2B8C} = {5EEEFAD8-7CFB-4E1E-8D51-8B74EBFF2B8C}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagementApp.API", "OrderManagementApp.API\OrderManagementApp.API.csproj", "{73EE8DE0-DABE-43A9-AC64-A6BB8FA59362}"
 	ProjectSection(ProjectDependencies) = postProject

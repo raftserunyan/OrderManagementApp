@@ -5,6 +5,7 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagementApp.UI", "OrderManagementApp\OrderManagementApp.UI.csproj", "{FDB3EC82-73F8-4FE6-9EEF-87F299B207CC}"
 	ProjectSection(ProjectDependencies) = postProject
+		{BF4F641E-DA1B-4637-AD88-5C6C82824910} = {BF4F641E-DA1B-4637-AD88-5C6C82824910}
 		{5EEEFAD8-7CFB-4E1E-8D51-8B74EBFF2B8C} = {5EEEFAD8-7CFB-4E1E-8D51-8B74EBFF2B8C}
 	EndProjectSection
 EndProject
@@ -20,6 +21,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagementApp.Shared", "OrderManagementApp.Shared\OrderManagementApp.Shared.csproj", "{5EEEFAD8-7CFB-4E1E-8D51-8B74EBFF2B8C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderManagementApp.Models", "OrderManagementApp.Models\OrderManagementApp.Models.csproj", "{BF4F641E-DA1B-4637-AD88-5C6C82824910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderManagementApp.Tests", "OrderManagementApp.Tests\OrderManagementApp.Tests.csproj", "{7900E6A5-8707-473F-BAB4-2B8F033B3E87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +54,10 @@ Global
 		{BF4F641E-DA1B-4637-AD88-5C6C82824910}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF4F641E-DA1B-4637-AD88-5C6C82824910}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF4F641E-DA1B-4637-AD88-5C6C82824910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7900E6A5-8707-473F-BAB4-2B8F033B3E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7900E6A5-8707-473F-BAB4-2B8F033B3E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7900E6A5-8707-473F-BAB4-2B8F033B3E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7900E6A5-8707-473F-BAB4-2B8F033B3E87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

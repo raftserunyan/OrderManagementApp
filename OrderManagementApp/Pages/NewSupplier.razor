@@ -1,0 +1,72 @@
+﻿@page "/suppliers/new"
+@using OrderManagementApp.Shared.Dtos
+@using OrderManagementApp.Shared.Enums
+@using OrderManagementApp.UI.Services
+@inject ISupplierService _supplierService
+@inject NavigationManager _navigatorManager
+
+<div class="container border">
+    <EditForm Model="@newSupplier" OnValidSubmit="@HandleValidSubmit" class="p-2 rounded">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" @bind-value="newSupplier.Name" />
+        </div>
+
+        <div class="form-group">
+            <label>AddressLine1</label>
+            <input type="text" class="form-control" @bind-value="newSupplier.AddressLine1" />
+        </div>
+
+        <div class="form-group">
+            <label>AddressLine2</label>
+            <input type="text" class="form-control" @bind-value="newSupplier.AddressLine2" />
+        </div>
+
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" class="form-control" @bind-value="newSupplier.City" />
+        </div>
+
+        <div class="form-group">
+            <label>Postal Code</label>
+            <input type="text" class="form-control" @bind-value="newSupplier.PostalCode" />
+        </div>
+
+        <div class="form-group">
+            <label>State</label>
+            <select class="form-control" @bind="newSupplier.State">
+                @foreach (var state in Enum.GetValues(typeof(State)))
+                {
+                    <option value="@state">@state</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-success mr-1" @onclick="SubmitFormAsync">Submit</button>
+            <button class="btn btn-secondary mr-1" @onclick="GoBackToSuppliersPage">Back</button>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    SupplierCreationRequest newSupplier = new SupplierCreationRequest();
+
+    protected async Task SubmitFormAsync()
+    {
+        await _supplierService.CreateSupplierAsync(newSupplier);
+    }
+
+    protected void HandleValidSubmit()
+    {
+        _navigatorManager.NavigateTo("suppliers");
+    }
+
+    protected void GoBackToSuppliersPage()
+    {
+        _navigatorManager.NavigateTo("suppliers");
+    }
+}

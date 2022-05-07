@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OrderManagementApp.Business.Services
 {
-    internal class SupplierService : ISupplierService
+    public class SupplierService : ISupplierService
     {
         private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;

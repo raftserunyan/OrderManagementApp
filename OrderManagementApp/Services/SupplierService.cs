@@ -40,14 +40,18 @@ namespace OrderManagementApp.UI.Services
             return JsonConvert.DeserializeObject<List<SupplierModel>>(await response.Content.ReadAsStringAsync());
         }
 
-        public Task<SupplierModel> GetSupplierByIdAsync(int id)
+        public async Task<SupplierModel> GetSupplierByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var response = await _httpClient.GetAsync($"api/suppliers/{id}");
+
+            return JsonConvert.DeserializeObject<SupplierModel>(await response.Content.ReadAsStringAsync());
         }
 
-        public Task<SupplierModel> UpdateSupplierAsync(SupplierUpdateRequest request)
+        public async Task<SupplierModel> UpdateSupplierAsync(SupplierUpdateRequest request)
         {
-            throw new System.NotImplementedException();
+            var response = await _httpClient.PutAsync($"api/suppliers/{request.Id}", new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json"));
+
+            return JsonConvert.DeserializeObject<SupplierModel>(await response.Content.ReadAsStringAsync());
         }
     }
 }

@@ -5,6 +5,10 @@ using OrderManagementApp.Business.Interfaces;
 using OrderManagementApp.Data.Interfaces;
 using AutoMapper;
 using OrderManagementApp.Business.Services;
+using System.Linq.Expressions;
+using OrderManagementApp.Models;
+using OrderManagementApp.Shared.CustomExceptions;
+using System.Threading.Tasks;
 
 namespace OrderManagementApp.Tests
 {
@@ -12,27 +16,20 @@ namespace OrderManagementApp.Tests
     {
         private readonly ISupplierService _supplierService;
 
-        private readonly Mock<IUnitOfWork> _unitOfWork = new Mock<IUnitOfWork>();
-        private readonly Mock<IMapper> _mapper = new Mock<IMapper>();
+        private readonly Mock<IUnitOfWork> _unitOfWorkMoq = new Mock<IUnitOfWork>();
+        private readonly Mock<IMapper> _mapperMoq = new Mock<IMapper>();
 
         public SupplierServiceTests()
         {
-            _supplierService = new SupplierService(_unitOfWork.Object, _mapper.Object);
+            _supplierService = new SupplierService(_unitOfWorkMoq.Object, _mapperMoq.Object);
         }
 
         [Fact]
-        public void GetByIdAsync_WhenIdIsInvalid_ThrowsNotFoundException()
+        public async Task GetByIdAsync_WhenIdIsInvalid_ThrowsNotFoundException()
         {
-            //// Arrange
-            //_unitOfWork.Setup(x => x.Suppliers.GetFirstOrDefaultAsync())
+            _unitOfWorkMoq.Setup(x => x.Suppliers.GetFirstOrDefaultAsync(It.IsAny<Expression<Func<Supplier, bool>>>())).Throws(new NotFoundException());
 
-            //// Act
-            //var productPages = await _productService
-            //    .SearchAsync(pageInfo, new ProductSearch() { SearchQuery = "-1" }, true);
-
-            //// Assert
-            //Assert.Equal(0, productPages.Page.TotalItems);
-            //Assert.IsType<PagedData<ProductDisplayEntity>>(productPages);
+            await Assert.ThrowsAsync<NotFoundException>(async () => await _supplierService.GetByIdAsync(11));
         }
     }
 }

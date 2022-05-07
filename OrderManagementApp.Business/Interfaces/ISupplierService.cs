@@ -10,6 +10,6 @@ namespace OrderManagementApp.Business.Interfaces
         Task<SupplierModel> GetByIdAsync(int id);
         Task DeleteSupplierAsync(int id);
         Task<SupplierModel> CreateSupplierAsync(SupplierCreationRequest request);
-        Task<SupplierModel> UpdateSupplierAsync(SupplierUpdateRequest request);
+        Task<SupplierModel> UpdateSupplierAsync(int id, SupplierUpdateRequest request);
     }
 }

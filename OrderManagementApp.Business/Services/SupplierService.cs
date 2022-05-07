@@ -55,9 +55,9 @@ namespace OrderManagementApp.Business.Services
             return _mapper.Map<SupplierModel>(supplier);
         }
 
-        public async Task<SupplierModel> UpdateSupplierAsync(SupplierUpdateRequest request)
+        public async Task<SupplierModel> UpdateSupplierAsync(int id, SupplierUpdateRequest request)
         {
-            var supplier = await _uow.Suppliers.GetFirstOrDefaultAsync(x => x.Id == request.Id);
+            var supplier = await _uow.Suppliers.GetFirstOrDefaultAsync(x => x.Id == id);
             ThrowBadDataExceptionIfNull(supplier, request.Id);
 
             _mapper.Map(request, supplier);
